@@ -40,6 +40,8 @@ which will be available at `localhost:5000`
 		
 ### Import PostgreSQL Database
 
+**You can choose to use your own PostgreSQL db, or import my db I already have set up which is dumped in (repo.db)**
+
 1. [Download PostgreSQL](https://www.postgresql.org/download/)
 
 The connection details are configured in app.py as follows:
