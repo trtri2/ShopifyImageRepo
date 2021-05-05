@@ -1,0 +1,119 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 13.2
+-- Dumped by pg_dump version 13.2
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: image; Type: TABLE; Schema: public; Owner: leon.trieu
+--
+
+CREATE TABLE public.image (
+    id integer NOT NULL,
+    "imgPath" character varying(160) NOT NULL,
+    description character varying(160),
+    "inCarousel" boolean
+);
+
+
+ALTER TABLE public.image OWNER TO "leon.trieu";
+
+--
+-- Name: image_id_seq; Type: SEQUENCE; Schema: public; Owner: leon.trieu
+--
+
+CREATE SEQUENCE public.image_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.image_id_seq OWNER TO "leon.trieu";
+
+--
+-- Name: image_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: leon.trieu
+--
+
+ALTER SEQUENCE public.image_id_seq OWNED BY public.image.id;
+
+
+--
+-- Name: image id; Type: DEFAULT; Schema: public; Owner: leon.trieu
+--
+
+ALTER TABLE ONLY public.image ALTER COLUMN id SET DEFAULT nextval('public.image_id_seq'::regclass);
+
+
+--
+-- Data for Name: image; Type: TABLE DATA; Schema: public; Owner: leon.trieu
+--
+
+COPY public.image (id, "imgPath", description, "inCarousel") FROM stdin;
+49	demo.jpg	squinty eyes	f
+30	152185370_439233043984698_437028147233893965_n.png	standoff	f
+31	153192503_274740504085647_6630347780977610987_n.jpg	cuddled in a blanket	f
+32	153391227_1138648376548239_1412750270989229982_n.jpg	big yawn	f
+33	153635401_905389306980823_2345863719955385140_n.png	stink eye	f
+34	154209230_3004354129813082_7671035654041911127_n.png	another day another nap	f
+35	154539691_138413514812991_2213708043377654406_n.jpg	surprised :O	f
+36	155786308_2935578409989098_3260287635278846644_n.png	side eye	f
+37	155985115_465116484687046_1179423472850625484_n.png	< _ >	f
+38	156008161_4075707942479462_8692201878183666423_n.png	walk walk time!	f
+39	156562636_2890127361207161_8682803829419684930_n.jpg	Can you tell I'm asleep?	f
+40	test.png	fresh shave fresh me	f
+41	test2.png	I hate baths	f
+42	test3.jpg	MY EAR!	f
+43	test4.jpg	The Fetal Position	f
+44	175964301_252269079920552_8292503039362537056_n.jpg	sunbathing	f
+46	174318600_167688508633298_7243075789640910072_n.png	so angelic!	f
+29	151986890_2879899395663752_4164797762245782200_n.jpg	sleepy	f
+45	174182544_816701122583429_1329973286907689252_n.jpg	vroom vroom	f
+\.
+
+
+--
+-- Name: image_id_seq; Type: SEQUENCE SET; Schema: public; Owner: leon.trieu
+--
+
+SELECT pg_catalog.setval('public.image_id_seq', 54, true);
+
+
+--
+-- Name: image image_imgPath_key; Type: CONSTRAINT; Schema: public; Owner: leon.trieu
+--
+
+ALTER TABLE ONLY public.image
+    ADD CONSTRAINT "image_imgPath_key" UNIQUE ("imgPath");
+
+
+--
+-- Name: image image_pkey; Type: CONSTRAINT; Schema: public; Owner: leon.trieu
+--
+
+ALTER TABLE ONLY public.image
+    ADD CONSTRAINT image_pkey PRIMARY KEY (id);
+
+
+--
+-- PostgreSQL database dump complete
+--
+
