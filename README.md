@@ -12,6 +12,8 @@ This is my challenge submission for Shopify's Fall 2021 Developer Intern positio
 * PostgreSQL was used as the DB of choice as its a popular open-source relational DB management system at the time and wanted to take the opportunity to get more hands on experience with it. 
 * SQLAlchemy was a good solution to use as the object relational mapping and abstract the database specific details away the solution, which lets the project be easily migrated to a different database service such as sqlite. 
 
+* The images are displayed to the web page using the filename image path, which was a cheeky way to have things working without needed a image hosting site or store the image as binary data in the db. Ideally we would do it in a real-world application. You can add photos to the **static/images** folder which can be then be used to upload to the database repo.
+
 ## ENVIRONMENT
 - Python 3 
 - Flask (WEB API)
