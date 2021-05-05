@@ -14,7 +14,7 @@ This is my challenge submission for Shopify's Fall 2021 Developer Intern positio
 
 ## ENVIRONMENT
 - Python 3 
-- Flask (API)
+- Flask (WEB API)
 - PostgreSQL (Database) 
 - SQLAlchemy (ORM)
 
