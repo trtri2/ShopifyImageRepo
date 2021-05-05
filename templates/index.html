@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Image Repository</title>
+    </head>
+    <body>
+        
+        <a href="/upload"><button>Upload Photo</button></a>
+        <a href="/carousel"><button>View Carousel</button></a>
+
+        <table border = 1>
+            <thead>
+                <td>Image</td>
+                <td>Image Path</td>
+                <td>Description</td>
+                <td><a href="/carousel/reset/"><button>Reset Carousel</button></a></td>
+                <td>Action</td>
+            </thead>
+            
+            {% for image in images %}
+                <tr>
+                    <td><img src='static/images/{{image.imgPath}}' width="400vw"/></td>
+                    <td>{{image.imgPath}}</td>
+                    <td>{{image.description}}</td>
+
+                    {% if image.inCarousel %}
+                        <td><a href="/carousel/delete/{{image.id}}"><button>Remove from Carousel</button></a></td>
+                    {% else %}
+                        <td><a href="/carousel/add/{{image.id}}"><button>Add to Carousel</button></a></td>
+                    {% endif %}
+
+                    <td><a href="/delete/{{image.id}}"><button>Delete</button></a></td>
+                </tr>
+            {% endfor %}
+        </table>
+
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <title>Image Repository</title>
+  </head>
+  <body>
+        <a href="/">Return to Repository</a> <br>
+        
+        {% if message %}
+        <h4>{{message}}</h4>
+        {% endif %}
+
+        <form action="{{ url_for('addImage')}}" method="post">
+            <h3>Enter the photo name and add a caption or description!</h3>
+            <p>Please type in the exact name of the photo and ensure it is in the images folder.</p>
+            <div>
+                <input type="text" name="imgPath" placeholder="imgPath">
+            </div>
+            <div>
+                <input type="text" name="description" placeholder="description">
+            </div>
+            <div>
+                <br/>
+                <button >Submit</button>
+            </div>
+        </form>
+  </body>
+
+</html>

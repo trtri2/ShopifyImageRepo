@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <title>Image Repository</title>
+
+      <script type="text/javascript">
+
+        let imagesList = []
+        {% for img in images %}
+            imagesList.push({
+                imgPath: '{{img.imgPath}}',
+                description: '{{img.description}}'
+            })
+        {% endfor %}
+
+        function getRandomImage() {
+            const num = Math.floor(Math.random() * imagesList.length)
+            const img = imagesList[num]
+            document.getElementById("carouselDescription").innerHTML = ('<h4>' + img.description + '</h4>')
+            document.getElementById("carouselImg").innerHTML = ('<img src=/static/images/' + img.imgPath + ' width="500vw">')
+        }
+
+        function displayCarousel() {
+            if (imagesList.length < 1){
+                document.getElementById("carouselDescription").innerHTML = ('<h4>Your carousel is empty! Add images from the repository to see them displayed here</h4>')
+            } else {
+                getRandomImage()
+                setTimeout(displayCarousel, 2000)
+            }
+        }
+        </script>
+  </head>
+  
+  <body onload="displayCarousel()">
+        <a href="/">Return to Repository</a> <br>
+
+        <h2>Carousel</h2> 
+        <div id="carouselDescription"></div>
+        <div id="carouselImg"></div>
+  </body>
+
+</html>
