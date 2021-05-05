@@ -19,11 +19,11 @@ This is my challenge submission for Shopify's Fall 2021 Developer Intern positio
 - SQLAlchemy (ORM)
 
 ## SETUP
-Download or clone the repo and set up the python and postgreSQL dependencies below. Afterwards, you can run 
+Download or clone the repo and install the python dependencies and then import the postgreSQL datbase in the instructions below. After that is setup, you can launch the flask server by running 
 
 	python3 app.py
 
-which will launch the flask server and be available at `localhost:5000`
+which will be available at `localhost:5000`
 
 ### Python3
 
